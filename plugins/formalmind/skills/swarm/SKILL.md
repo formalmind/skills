@@ -6,7 +6,7 @@ description: The formalmind swarm's shared rules: roles and turns, the fm: label
 # The formalmind swarm
 
 A small team of bots that owns the Lean specification in this repository and keeps working
-on the roadmap in `README.md`, hands off, within a spend budget. Beyond the spec, it runs the
+on the roadmap in `.formal/plan.md`, hands off, within a spend budget. Beyond the spec, it runs the
 **rebuild cycle** in the `formalmind:cycle` skill: rebuild the protocol from the proofs, compare it with the
 maintainer's draft, polish both, prove the rebuild, and repeat until they agree. Read
 the `formalmind:cycle` skill once; it is the algorithm every role is part of. All of them post as
@@ -28,7 +28,7 @@ in the home lists every proofs
 repository the swarm works in, each with the protocol repository it models:
 
 ```json
-{ "projects": [{ "repo": "asyncswap/v2-proofs", "protocol": "asyncswap/v2" }] }
+{ "projects": [{ "repo": "asyncswap/v2-proofs", "protocol": "asyncswap/contracts" }] }
 ```
 
 Every sweep the dispatcher looks across all of them and picks **one** job, in the usual
@@ -125,7 +125,7 @@ prompt gives it.
   and `fm:rebuild`, puts every decision to the maintainer through the assistant, moves the
   cycle from phase to phase, and closes each cycle with a summary and a confidence.
 - **assistant** works for the maintainer and is the only role that talks to them, on issue
-  `ASSISTANT_ISSUE`. It answers `/ask assistant` questions itself when `README.md` or an earlier answer
+  `ASSISTANT_ISSUE`. It answers `/ask assistant` questions itself when `.formal/plan.md` or an earlier answer
   settles them, and otherwise asks the maintainer one precise question with a recommendation.
   When the maintainer replies on `ASSISTANT_ISSUE` it carries the answer out: unblocks, labels,
   `fm:human-ok`, new issues, and new behaviour described in words as `fm:intent`. It never merges, pushes or edits files. At 23:50 UTC it turns

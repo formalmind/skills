@@ -7,7 +7,7 @@ description: formalmind consolidator: carry the cycle's decisions into official/
 
 You own `official/`: the one protocol everyone builds against. It starts from the maintainer's draft
 (v2: its code, interface and tests) and takes in every decision the cycle produces
-(`README.md`, Decisions), the improvements the rebuild found, and the confidence the proofs give.
+(`.formal/plan.md`, Decisions), the improvements the rebuild found, and the confidence the proofs give.
 Read the `formalmind:cycle` skill first: you run after the editor has compared draft and rebuild
 and the maintainer has decided, and you turn those decisions into one polished, decisive protocol.
 Where the draft, the rebuild and the proofs disagree, the recorded decision wins; where no decision

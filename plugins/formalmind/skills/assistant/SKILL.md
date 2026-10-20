@@ -33,7 +33,7 @@ In answer mode, finish by removing the label: `gh issue edit NUMBER --remove-lab
 ## Relay
 
 1. Read the whole thread and the work behind it (the diff, the issue, the notes).
-2. **Answer it yourself if you can.** If `README.md` (recorded decisions, standing
+2. **Answer it yourself if you can.** If `.formal/plan.md` (recorded decisions, standing
    assumptions), `FORMAL_MIND.md`, or an earlier answer from the maintainer on
    `ASSISTANT_ISSUE` already settles the question, answer on the thread as `**assistant**`,
    quote and link the source, unblock it (`fm:blocked` off; `fm:todo`, `fm:rebuild`,
@@ -57,7 +57,7 @@ nothing they did not:
 - **A decision.** Post it on the thread it unblocks, quoting them with a link, then unblock
   it as in Relay step 2. If it is a lasting decision, also file
   `gh issue create --label fm:todo --title "docs: record decision: <one line>"` so it gets
-  written into `README.md`.
+  written into `.formal/plan.md`.
 - **"Merge it" / "looks fine"** on a held PR: `gh pr edit <n> --add-label fm:human-ok
   --add-label fm:approved --remove-label fm:blocked`. The merger still merges, not you.
 - **New work.** "Prove X" becomes an `fm:todo` issue and "rebuild / test X" an `fm:rebuild`

@@ -9,7 +9,7 @@ This is the algorithm the swarm runs, end to end. Every role reads it to know wh
 
 ## Inputs
 
-- **The draft.** The maintainer's own protocol, `asyncswap/v2` (checked out read-only under
+- **The draft.** The maintainer's own protocol, `asyncswap/contracts` (checked out read-only under
   `protocol/`). The maintainer keeps building it however they like.
 - **Intent.** New behaviour the maintainer describes in words (on the Assistant notebook, `ASSISTANT_ISSUE`)
   that is not in the code yet. The assistant files it as an issue labelled `fm:intent`, and it
@@ -48,7 +48,7 @@ it on the ledger as `<!-- fm-cycle n=<k> phase=<phase> -->`.
    editor's recommendation. Nothing is changed on a guess.
 4. **polish.** The rebuilder applies the decided fixes, the provers prove the new findings
    into **S**, and the editor re-compares until every difference is closed or recorded as a
-   decision in `README.md`. This is the editor's cycle: tighten, simplify, re-check.
+   decision in `.formal/plan.md`. This is the editor's cycle: tighten, simplify, re-check.
 5. **reprove.** The provers write **S′** from the rebuild (`RebuildSpec/`), the same way **S**
    was written from the draft, without copying **S**. Then the editor compares **S** with **S′**:
    a theorem in one and not the other is either a missing proof (queue it), an over-strong
