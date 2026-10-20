@@ -61,8 +61,8 @@ one first, then your role's:
 | chief | `formalmind:chief` | | any role, `MODE=answer` | `formalmind:answer` |
 
 The rebuild cycle every role is part of is `formalmind:cycle`. The voice and code-pointing
-rules are in `formalmind:mention`, and `formalmind:lean4-cleanup` clears Lean linter
-warnings. `MAINTAINER` in these skills is the maintainer's GitHub handle; the workflow
+rules are in `formalmind:mention`, and `formalmind:lean4-style` is how Lean is
+written here. `MAINTAINER` in these skills is the maintainer's GitHub handle; the workflow
 prompt gives it.
 
 ## Shared memory is GitHub

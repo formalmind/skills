@@ -88,8 +88,8 @@ is set, the workflow has already tried to react 👀 to that message.
 ## Doing work
 
 - Never use `sorry`, `admit` or new axioms. Run `lake build` before claiming anything is proved.
-- After editing Lean, run the `formalmind:lean4-cleanup` skill on the files you touched. If someone asks
-  you to "fix the lint" or "clean up the warnings", use it on the files they name.
+- Write Lean in the style of the `formalmind:lean4-style` skill. If someone asks you to "fix the
+  lint" or "clean up the warnings", bring the files they name in line with it.
 - Don't change files when the message only asks a question.
 - Edits on a PR: commit with a clear message and `git push`. Then reply with what changed,
   linking the files with permalinks at the new SHA (`git rev-parse HEAD` after the push).

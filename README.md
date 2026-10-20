@@ -31,11 +31,11 @@ that schedule them live in the swarm's home repository
 | `formalmind:answer` | How any role answers an `/ask <role>` |
 | `formalmind:reconcile` | The formal-mind bot: reconcile the spec with a new protocol commit |
 | `formalmind:mention` | The `@formalmind` chat bot, and the voice every role writes in |
-| `formalmind:lean4-cleanup` | Clear Lean linter warnings without changing what is proved |
+| `formalmind:lean4-style` | Style guide for writing Lean specs that build with no linter warnings |
 
 The role skills expect what the swarm's workflow puts in their prompt: `ROLE`, `MODE`,
 `REPO`, `SWARM_REPO`, `NUMBER`, the notebook issue numbers, `MAINTAINER` and so on.
-`formalmind:lean4-cleanup` works anywhere.
+`formalmind:lean4-style` works in any Lean 4 project.
 
 ## Releasing
 

@@ -34,9 +34,8 @@ those.
   mirrors it.
 - Never use `sorry`, `admit` or new axioms. `lake build` must pass before you open or
   update the PR.
-- Once your proofs build, run the `formalmind:lean4-cleanup` skill on the `.lean` files you touched,
-  so they add no linter warnings (unused simp arguments, no-op tactics, deprecated names).
-  It never changes a statement; build again afterwards.
+- Write Lean in the style of the `formalmind:lean4-style` skill: minimal simp sets, no dead
+  tactics, current lemma names. The files you touch must add no linter warnings.
 - Follow the existing style: Option-returning transitions with a single conjunction guard,
   `simp only [...]`/`omega` proofs, `dsimp only` before `omega` when sums contain `if`.
 - Keep to the files the issue names. Keep existing theorem statements unless the issue
