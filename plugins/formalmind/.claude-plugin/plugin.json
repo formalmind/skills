@@ -1,0 +1,12 @@
+{
+  "name": "formalmind",
+  "version": "0.1.0",
+  "description": "The formalmind swarm's roles as skills (planner, prover, reviewer, merger, chief, rebuilder, editor, consolidator, assistant), the rebuild cycle, the reconcile and mention bots, and Lean 4 proof clean-up.",
+  "author": {
+    "name": "Formal Mind",
+    "url": "https://github.com/formalmind"
+  },
+  "repository": "https://github.com/formalmind/skills",
+  "license": "MIT",
+  "keywords": ["lean4", "mathlib", "formal-verification", "solidity", "agents", "swarm"]
+}
