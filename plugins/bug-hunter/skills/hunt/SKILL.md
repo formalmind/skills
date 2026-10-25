@@ -51,6 +51,18 @@ Write each suspicion down as a hypothesis with its place (file:line) and what ex
 
 Rank them by damage if true, and work the worst first.
 
+## 2b. Read the tests against the code
+
+The suite is evidence only for what it can see. For each risky change or invariant the code relies on:
+
+- Is there a test or invariant that would fail if it broke? Read what it actually compares (an invariant over tick
+  levels can't see a wrong pick inside a level).
+- Does the campaign reach the case? Check the handler's input distribution (uniform prices over a wide range almost
+  never put two orders on one level). Count it if unsure: log how often the state occurs at the end of each run.
+- If either is missing, write the invariant or the handler yourself, in a scratch copy, and run the campaign deeper
+  than CI does (`FOUNDRY_INVARIANT_RUNS=256 FOUNDRY_INVARIANT_DEPTH=200`, in the background). A passing deep campaign
+  that reaches the case is strong evidence; a failing one is your PoC.
+
 ## 3. Settle each hypothesis with the cheapest evidence
 
 | Question | Cheapest way to settle it |
@@ -60,6 +72,7 @@ Rank them by damage if true, and work the worst first.
 | Can any input make this fuzz test fail? | `concolity explore <root> --only <Contract::test>` (findings come reduced) |
 | What exactly does the bytecode do on this input? | `concolity debug <root> <file> Contract::test lines/writes/revert --arg …` |
 | Does the attack work end to end? | a Foundry test that demonstrates it, run with `forge test --match-path` |
+| Does it hold over sequences of calls (submit, partial fill, reprice, cancel, match)? | an invariant over a handler, run deep with forge (`FOUNDRY_INVARIANT_RUNS`/`_DEPTH`) |
 | Can it be ruled out for every input? | count it from the code (bounds, invariants), or prove it (z3 on the guard, Lean) |
 
 What the evidence means:
