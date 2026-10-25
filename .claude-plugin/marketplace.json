@@ -1,6 +1,6 @@
 {
   "name": "formalmind",
-  "description": "Formal Mind: the skills of the formalmind swarm, a team of bots that keeps a Lean 4 specification of a Solidity protocol proved, reconciled and rebuilt.",
+  "description": "Formal Mind: the formalmind swarm's skills (Lean 4 specifications of Solidity protocols, proved, reconciled and rebuilt), and the Bug Hunter's (finding vulnerabilities by testing the bytecode).",
   "owner": {
     "name": "Formal Mind",
     "url": "https://github.com/formalmind"
@@ -16,9 +16,40 @@
       },
       "repository": "https://github.com/formalmind/skills",
       "license": "MIT",
-      "keywords": ["lean4", "mathlib", "formal-verification", "solidity", "agents", "swarm"],
+      "keywords": [
+        "lean4",
+        "mathlib",
+        "formal-verification",
+        "solidity",
+        "agents",
+        "swarm"
+      ],
       "source": "./plugins/formalmind",
       "category": "development",
+      "strict": false
+    },
+    {
+      "name": "bug-hunter",
+      "description": "Hunting vulnerabilities in Solidity, Huff and EVM bytecode: an auditor's method (read, patterns, hypotheses, then tools), concolity's coverage, concolic explore and agent debugger, and long tasks run in the background.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Formal Mind",
+        "url": "https://github.com/formalmind"
+      },
+      "repository": "https://github.com/formalmind/skills",
+      "license": "MIT",
+      "keywords": [
+        "solidity",
+        "security",
+        "audit",
+        "fuzzing",
+        "concolic",
+        "evm",
+        "foundry",
+        "agents"
+      ],
+      "source": "./plugins/bug-hunter",
+      "category": "security",
       "strict": false
     }
   ]

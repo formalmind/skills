@@ -1,6 +1,6 @@
 # formalmind/skills
 
-The skills of the **formalmind swarm**: a small team of bots that keeps a Lean 4 + Mathlib
+The skills of the **formalmind swarm** (plugin `formalmind`) and of the **Bug Hunter** (plugin `bug-hunter`). The swarm is a small team of bots that keeps a Lean 4 + Mathlib
 specification of a Solidity protocol proved, reconciles it with every protocol commit, and
 rebuilds the protocol from the proofs. Each role is a Claude Code skill. The GitHub workflows
 that schedule them live in the swarm's home repository
@@ -36,6 +36,23 @@ that schedule them live in the swarm's home repository
 The role skills expect what the swarm's workflow puts in their prompt: `ROLE`, `MODE`,
 `REPO`, `SWARM_REPO`, `NUMBER`, the notebook issue numbers, `MAINTAINER` and so on.
 `formalmind:lean4-style` works in any Lean 4 project.
+
+## The Bug Hunter (`bug-hunter`)
+
+A second plugin, apart from the swarm: finding vulnerabilities by testing the bytecode.
+
+```
+/plugin install bug-hunter@formalmind
+```
+
+| Skill | What it is |
+| --- | --- |
+| `bug-hunter:hunt` | The method: read the code that moves value, suspect specific bugs from known patterns, settle each with the cheapest evidence, file only what a passing PoC shows |
+| `bug-hunter:concolity` | concolity's commands: coverage (with `--at`), concolic explore (`--target`, `--only`), the agent debugger |
+| `bug-hunter:background` | Long tasks in the background: start, keep working, read the result when it's needed |
+
+The tools are [concolity](https://github.com/formalmind/concolity) (`cargo build --release`, and `z3` for explore) and
+Foundry. The Formal Mind desktop app's Bug Hunter (its Concolic tab) follows the same method with the same tools.
 
 ## Releasing
 

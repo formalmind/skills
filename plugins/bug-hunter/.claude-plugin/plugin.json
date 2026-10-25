@@ -1,0 +1,12 @@
+{
+  "name": "bug-hunter",
+  "version": "0.1.0",
+  "description": "Hunting vulnerabilities in Solidity, Huff and EVM bytecode: an auditor's method (read, patterns, hypotheses, then tools), concolity's coverage, concolic explore and agent debugger, and long tasks run in the background.",
+  "author": {
+    "name": "Formal Mind",
+    "url": "https://github.com/formalmind"
+  },
+  "repository": "https://github.com/formalmind/skills",
+  "license": "MIT",
+  "keywords": ["solidity", "security", "audit", "fuzzing", "concolic", "evm", "foundry", "agents"]
+}
